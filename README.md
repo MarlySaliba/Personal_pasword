@@ -1,7 +1,7 @@
-## Personal_pasword
+# Personal_pasword
 The initial goal of this project is to build a platform on which users can create their own passwords and usernames and then develop their own spaces.
 
-# The first step
+## The first step
 Program a password creator.
 
 This part of the project must contain certain conditions:
@@ -15,4 +15,4 @@ If all of these conditions are respected then return an affirmation that the pas
 
 It is recommended to use a loop to make sure that you keep asking for a valid password.
 
-# The second step 
+## The second step 
