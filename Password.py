@@ -5,9 +5,6 @@ class Password:
     def password_setting(self):
         while True:
             self._password = input("Enter your password: ")  # How you enter your password
-            counter = 0
-            specials = 0
-            uppers = 0
             
             special_characters = "!@#$%^&*'()-_+=<>?/\""  # The special characters that are possible in a password
 
