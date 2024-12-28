@@ -16,3 +16,4 @@ If all of these conditions are respected then return an affirmation that the pas
 It is recommended to use a loop to make sure that you keep asking for a valid password.
 
 ## The second step 
+Give the user the option to generate a random password that includes all the previous conditions.
