@@ -11,23 +11,21 @@ class Password:
             
             special_characters = "!@#$%^&*'()-_+=<>?/\""  # The special characters that are possible in a password
 
-            # Password analysis
-            for i in self._password:  # Counting the amount of numbers
-                if i.isdigit():
-                    counter += 1
-                elif i in special_characters:  # Counting the amount of special characters
-                    specials += 1
-                elif i.isupper():  # Counting the amount of uppercase characters
-                    uppers += 1
-
-            # Password validation    
+            # Password analysis & validation
+ 
             messages = []
-            if counter < 1:
+            # Check for sufficient numbers
+            if not any(char.isdigit() for char in self._password):
                 messages.append("You do not have sufficient numbers in your password.")
-            if specials < 1:
+                
+            # Check for sufficient special characters
+            if not any(char in special_characters for char in self._password):
                 messages.append("You need to include a special character in your password.")
-            if uppers < 1:
+                
+            # Check for uppercase letters
+            if not any(char.isupper() for char in self._password):
                 messages.append("You need at least 1 uppercase letter in your password.")
+
             if len(self._password) < 8:
                 messages.append("Your password needs to be at least 8 characters long.")
             if ' ' in self._password:  # Check for spaces
@@ -37,8 +35,7 @@ class Password:
             if messages:
                 print("\n".join(messages))  # Print all validation messages
             else:
-                print("You have entered a valid password.")  # If all conditions are met
-                return self._password  # Return the valid password
+                return "You have entered a valid password."  # Return the valid if all conditions are met
 
 
 # Instantiate the Password class
@@ -48,4 +45,4 @@ password_check = Password()
 password_input = password_check.password_setting()
 
 # Print the result
-print(f"Your valid password is: {password_input}")
+print(f"{password_input}")
