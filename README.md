@@ -16,4 +16,10 @@ If all of these conditions are respected then return an affirmation that the pas
 It is recommended to use a loop to make sure that you keep asking for a valid password.
 
 ## The second step 
-Give the user the option to generate a random password that includes all the previous conditions.
+Implement the functionality to generate a random password that meets all the conditions outlined in the previous step. 
+
+The generated password must adhere to the same requirements as the manually created password while being fully random. In other words, each time the 'generate' button is pressed, a unique password should be produced.
+
+
+## The third step
+Program a username creator.
