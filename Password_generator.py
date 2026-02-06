@@ -1,11 +1,9 @@
 import random
 import string
 class Password_generator:
-    # Initiating all my variables - in this case there is only the generated password
     def __init__(self, generated_password=''):
         self._generated_password = generated_password
 
-    # This is the definition in charge of generating and validating the password
     def generator(self):
         letters = string.ascii_letters 
         digits = string.digits                        #String of all the letters and digits 
@@ -14,28 +12,25 @@ class Password_generator:
 
         # Ensure at least one lowercase letter, one uppercase letter, one digit, and one special character
         password = [
-            random.choice(string.ascii_lowercase),  # At least one lowercase letter
-            random.choice(string.ascii_uppercase),  # At least one uppercase letter
-            random.choice(string.digits),           # At least one digit
-            random.choice(special_characters)       # At least one special character
+            random.choice(string.ascii_lowercase), 
+            random.choice(string.ascii_uppercase),  
+            random.choice(string.digits),           
+            random.choice(special_characters)       
         ]
 
-        # Fill the remaining characters to make it 8 characters long
-        password_length = random.randint(8, 12)  # Random length between 8 and 12
+        password_length = random.randint(8, 12) 
         password += random.choices(all_characters, k=password_length - len(password))
 
-        # Shuffle the password to randomize the positions of the characters
         random.shuffle(password)
 
-        # Convert the list to a string (8 characters long)
         random_string = ''.join(password)
         
-        # Return the password that you got
         return random_string
     
 password = Password_generator()
 
 print(password.generator())
+
 
 
 
