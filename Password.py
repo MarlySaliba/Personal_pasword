@@ -4,11 +4,9 @@ class Password:
 
     def password_setting(self):
         while True:
-            self._password = input("Enter your password: ")  # How you enter your password
+            self._password = input("Enter your password: ") 
             
-            special_characters = "!@#$%^&*'()-_+=<>?/\""  # The special characters that are possible in a password
-
-            # Password analysis & validation
+            special_characters = "!@#$%^&*'()-_+=<>?/\""  # Special characters possible in password
  
             messages = []
             # Check for sufficient numbers
@@ -28,18 +26,14 @@ class Password:
             if ' ' in self._password:  # Check for spaces
                 messages.append("Your password must not contain spaces.")
 
-            # If there are messages, print them and ask for the password again
             if messages:
-                print("\n".join(messages))  # Print all validation messages
+                print("\n".join(messages))
             else:
-                return "You have entered a valid password."  # Return the valid if all conditions are met
+                return "You have entered a valid password." 
 
-
-# Instantiate the Password class
 password_check = Password()
 
-# Call the password_setting method to set a password
 password_input = password_check.password_setting()
 
-# Print the result
 print(f"{password_input}")
+
